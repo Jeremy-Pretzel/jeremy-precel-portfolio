@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+:root {
+  --font-heading: 'HelveticaNowDisplay-Medium', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'HelveticaNowDisplayW01-Rg', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #000;
+  color: #000;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+/* Custom blue cursor */
+@media (pointer: fine) {
+  body,
+  a,
+  button {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    width: 14px;
+    height: 14px;
+    background: #4F8CFF;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px rgba(79, 140, 255, 0.55);
+  }
+}
+.cursor-trail {
+  position: fixed;
+  background: #4F8CFF;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  filter: blur(2px);
+}
+
+/* ZeroCo horizontal PDF scroller */
+
+.zeroco-scroller {
+  scrollbar-color: #4F8CFF rgba(255, 255, 255, 0.08);
+}
+
+.zeroco-scroller::-webkit-scrollbar {
+  height: 8px;
+}
+
+.zeroco-scroller::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.zeroco-scroller::-webkit-scrollbar-thumb {
+  background: #4F8CFF;
+  border-radius: 999px;
+}
+
+.zeroco-scroller::-webkit-scrollbar-thumb:hover {
+  background: #4F8CFF;
+}
+
+/* Zoomed PDF vertical scrollbar */
+
+.zoom-scroller {
+  scrollbar-color: #4F8CFF rgba(255, 255, 255, 0.08);
+}
+
+.zoom-scroller::-webkit-scrollbar {
+  width: 8px;
+}
+
+.zoom-scroller::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.zoom-scroller::-webkit-scrollbar-thumb {
+  background: #4F8CFF;
+  border-radius: 999px;
+}
+
+.zoom-scroller::-webkit-scrollbar-thumb:hover {
+  background: #4F8CFF;
+}
+
+/* ZeroCo OOH continuous marquee */
+.ooh-marquee {
+  animation: oohMarquee 40s linear infinite;
+}
+
+@keyframes oohMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+  transform: translateX(calc(-50% - 10px));
+}
+}
+
+/* OOH scrollable but hide scrollbar */
+.ooh-scroll-hidden {
+  scrollbar-width: none;
+}
+
+.ooh-scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* ZeroCo Challenge continuous marquee */
+.challenge-marquee {
+  animation: challengeMarquee 40s linear infinite;
+}
+
+@keyframes challengeMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+
+/* ZeroCo social continuous marquee */
+.social-marquee {
+  animation: socialMarquee 45s linear infinite;
+}
+
+@keyframes socialMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 20px));
+  }
+}
